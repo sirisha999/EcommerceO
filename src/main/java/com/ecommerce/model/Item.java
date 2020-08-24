@@ -12,6 +12,7 @@ public class Item {
     private Integer itemId;
     private String itemName;
     private double pricePerUnit;
+    private Integer quantity;
 
     public Integer getItemId() {
 	return itemId;
@@ -40,6 +41,14 @@ public class Item {
 
     public double getPricePerUnit() {
 	return pricePerUnit;
+    }
+
+    public Integer getQuantity() {
+	return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+	this.quantity = quantity;
     }
 
 }

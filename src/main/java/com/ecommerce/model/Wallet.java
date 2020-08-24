@@ -2,11 +2,18 @@ package com.ecommerce.model;
 
 import java.time.LocalDate;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Wallet {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer walletId;
     private double amount;
     private LocalDate validityDate;
-    private Integer userId;
 
     public Integer getWalletId() {
 	return walletId;
@@ -30,14 +37,6 @@ public class Wallet {
 
     public void setValidityDate(LocalDate validityDate) {
 	this.validityDate = validityDate;
-    }
-
-    public Integer getUserId() {
-	return userId;
-    }
-
-    public void setUserId(Integer userId) {
-	this.userId = userId;
     }
 
 }

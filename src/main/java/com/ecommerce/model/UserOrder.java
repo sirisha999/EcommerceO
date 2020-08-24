@@ -14,7 +14,7 @@ import javax.persistence.OneToMany;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
-public class Orders {
+public class UserOrder {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer ordersId;
@@ -25,6 +25,7 @@ public class Orders {
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "ordersIdFk", referencedColumnName = "ordersId")
     private List<OrderDetails> orderDetails;
+    private String status;
 
     public Integer getOrdersId() {
 	return ordersId;
@@ -68,5 +69,13 @@ public class Orders {
 
     public void setOrderTime(LocalDate orderTime) {
 	this.orderTime = orderTime;
+    }
+
+    public String getStatus() {
+	return status;
+    }
+
+    public void setStatus(String status) {
+	this.status = status;
     }
 }
